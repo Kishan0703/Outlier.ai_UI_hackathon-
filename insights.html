@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Insights - Financial Portfolio Dashboard</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-gray-900 text-gray-200 dark theme-transition">
+    <div class="flex flex-col md:flex-row min-h-screen">
+        <!-- Sidebar -->
+        <div class="w-full md:w-64 bg-dark-800 border-r border-gray-700">
+            <div class="p-4 flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                    <div class="h-8 w-8 rounded-full bg-gradient-to-r from-blue-500 to-cyan-400 flex items-center justify-center">
+                        <span class="font-bold text-white">K</span>
+                    </div>
+                    <span class="text-lg font-semibold">KishanFolio</span>
+                </div>
+                <button id="theme-toggle" class="text-gray-400 hover:text-white rounded-full p-2">
+                    <i class="fas fa-moon"></i>
+                    <span class="sr-only">Dark Mode</span>
+                </button>
+            </div>
+            
+            <div class="p-4">
+                <div class="flex items-center space-x-3 mb-6">
+                    <div class="h-10 w-10 rounded-full bg-gradient-to-r from-purple-500 to-pink-500"></div>
+                    <div>
+                        <div class="font-medium">Kishan Sharma</div>
+                        <div class="text-xs text-gray-400">Premium Member</div>
+                    </div>
+                </div>
+                
+                <nav>
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="index.html" class="flex items-center space-x-2 p-2 rounded hover:bg-dark-700 text-gray-400">
+                                <i class="fas fa-chart-line"></i>
+                                <span>Dashboard</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center space-x-2 p-2 rounded hover:bg-dark-700 text-gray-400">
+                                <i class="fas fa-wallet"></i>
+                                <span>Transactions</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center space-x-2 p-2 rounded hover:bg-dark-700 text-gray-400">
+                                <i class="fas fa-star"></i>
+                                <span>Watchlist</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="insights.html" class="flex items-center space-x-2 p-2 rounded hover:bg-dark-700 bg-primary-700 text-white">
+                                <i class="fas fa-lightbulb"></i>
+                                <span>Insights</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center space-x-2 p-2 rounded hover:bg-dark-700 text-gray-400">
+                                <i class="fas fa-cog"></i>
+                                <span>Settings</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        
+        <!-- Main content -->
+        <main class="flex-1 p-4 md:p-6 overflow-auto">
+            <div class="mb-6">
+                <h1 class="text-2xl font-semibold">Investment Insights</h1>
+                <p class="text-gray-400">Kishan's strategies and market perspectives to help you invest better.</p>
+            </div>
+            
+            <!-- Market Strategy Cards -->
+            <div class="mb-8">
+                <h2 class="text-xl font-semibold mb-4">Market Strategies</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Value Investing Card -->
+                    <div class="bg-dark-800 rounded-lg border border-gray-700 overflow-hidden card-hover">
+                        <img src="images/value-investing.svg" alt="Value Investing" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2">Value Investing</h3>
+                            <p class="text-gray-400 text-sm mb-3">Finding undervalued gems in the Indian market using fundamental analysis and patience.</p>
+                            <div class="flex items-center text-sm">
+                                <span class="text-primary-400">Read more</span>
+                                <i class="fas fa-arrow-right ml-2 text-primary-400"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Growth Investing Card -->
+                    <div class="bg-dark-800 rounded-lg border border-gray-700 overflow-hidden card-hover">
+                        <img src="images/small-cap-investing.svg" alt="Small-Cap Investing" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2">Small-Cap Investing</h3>
+                            <p class="text-gray-400 text-sm mb-3">Finding multi-bagger opportunities in the small-cap universe with potential for exponential growth.</p>
+                            <div class="flex items-center text-sm">
+                                <span class="text-primary-400">Read more</span>
+                                <i class="fas fa-arrow-right ml-2 text-primary-400"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Dividend Investing Card -->
+                    <div class="bg-dark-800 rounded-lg border border-gray-700 overflow-hidden card-hover">
+                        <img src="images/dividend-investing.svg" alt="Dividend Investing" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2">Dividend Investing</h3>
+                            <p class="text-gray-400 text-sm mb-3">Building a passive income stream through high-quality dividend-paying stocks in India.</p>
+                            <div class="flex items-center text-sm">
+                                <span class="text-primary-400">Read more</span>
+                                <i class="fas fa-arrow-right ml-2 text-primary-400"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Blog Posts -->
+            <div class="mb-8">
+                <h2 class="text-xl font-semibold mb-4">Latest Articles</h2>
+                <div class="grid grid-cols-1 gap-6">
+                    <!-- Blog Post 1 -->
+                    <div class="bg-dark-800 rounded-lg border border-gray-700 overflow-hidden card-hover">
+                        <div class="flex flex-col md:flex-row">
+                            <div class="md:w-1/3">
+                                <img src="images/portfolio-diversification.svg" alt="Portfolio Diversification" class="w-full h-64 md:h-full object-cover">
+                            </div>
+                            <div class="md:w-2/3 p-6">
+                                <div class="flex items-center mb-2">
+                                    <span class="text-xs text-gray-400 mr-4">April 12, 2023</span>
+                                    <span class="text-xs bg-blue-500 bg-opacity-20 text-blue-300 px-2 py-1 rounded">Investment Strategy</span>
+                                </div>
+                                <h3 class="text-xl font-semibold mb-2">The Art of Portfolio Diversification in Indian Markets</h3>
+                                <p class="text-gray-400 mb-4">Learn how to build a well-diversified portfolio across asset classes, sectors, and market caps to minimize risk and maximize returns in the Indian market context.</p>
+                                <div class="flex items-center text-sm">
+                                    <span class="text-primary-400">Read full article</span>
+                                    <i class="fas fa-arrow-right ml-2 text-primary-400"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Blog Post 2 -->
+                    <div class="bg-dark-800 rounded-lg border border-gray-700 overflow-hidden card-hover">
+                        <div class="flex flex-col md:flex-row">
+                            <div class="md:w-1/3">
+                                <img src="images/sectoral-rotation.svg" alt="Sectoral Rotation" class="w-full h-64 md:h-full object-cover">
+                            </div>
+                            <div class="md:w-2/3 p-6">
+                                <div class="flex items-center mb-2">
+                                    <span class="text-xs text-gray-400 mr-4">April 8, 2023</span>
+                                    <span class="text-xs bg-green-500 bg-opacity-20 text-green-300 px-2 py-1 rounded">Market Trends</span>
+                                </div>
+                                <h3 class="text-xl font-semibold mb-2">Mastering Sectoral Rotation for Market Outperformance</h3>
+                                <p class="text-gray-400 mb-4">Understanding economic cycles and sector performance can help you shift investments strategically between different sectors to capitalize on changing market conditions.</p>
+                                <div class="flex items-center text-sm">
+                                    <span class="text-primary-400">Read full article</span>
+                                    <i class="fas fa-arrow-right ml-2 text-primary-400"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Blog Post 3 -->
+                    <div class="bg-dark-800 rounded-lg border border-gray-700 overflow-hidden card-hover">
+                        <div class="flex flex-col md:flex-row">
+                            <div class="md:w-1/3">
+                                <img src="images/technical-analysis.svg" alt="Technical Analysis" class="w-full h-64 md:h-full object-cover">
+                            </div>
+                            <div class="md:w-2/3 p-6">
+                                <div class="flex items-center mb-2">
+                                    <span class="text-xs text-gray-400 mr-4">April 3, 2023</span>
+                                    <span class="text-xs bg-purple-500 bg-opacity-20 text-purple-300 px-2 py-1 rounded">Technical Analysis</span>
+                                </div>
+                                <h3 class="text-xl font-semibold mb-2">Technical Analysis: Chart Patterns Every Indian Investor Should Know</h3>
+                                <p class="text-gray-400 mb-4">Learn to identify key chart patterns and technical indicators that can help you make better entry and exit decisions in the volatile Indian equity markets.</p>
+                                <div class="flex items-center text-sm">
+                                    <span class="text-primary-400">Read full article</span>
+                                    <i class="fas fa-arrow-right ml-2 text-primary-400"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Blog Post 4 -->
+                    <div class="bg-dark-800 rounded-lg border border-gray-700 overflow-hidden card-hover">
+                        <div class="flex flex-col md:flex-row">
+                            <div class="md:w-1/3">
+                                <img src="images/market-psychology.svg" alt="Market Psychology" class="w-full h-64 md:h-full object-cover">
+                            </div>
+                            <div class="md:w-2/3 p-6">
+                                <div class="flex items-center mb-2">
+                                    <span class="text-xs text-gray-400 mr-4">March 28, 2023</span>
+                                    <span class="text-xs bg-red-500 bg-opacity-20 text-red-300 px-2 py-1 rounded">Investor Psychology</span>
+                                </div>
+                                <h3 class="text-xl font-semibold mb-2">Market Psychology: Mastering Your Emotions for Better Returns</h3>
+                                <p class="text-gray-400 mb-4">Understanding the psychological biases that affect investment decisions and learning to control emotions during market volatility can significantly improve your long-term performance.</p>
+                                <div class="flex items-center text-sm">
+                                    <span class="text-primary-400">Read full article</span>
+                                    <i class="fas fa-arrow-right ml-2 text-primary-400"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Newsletter Subscription -->
+            <div class="bg-dark-800 rounded-lg border border-gray-700 p-6 mb-8">
+                <div class="flex flex-col md:flex-row items-center justify-between">
+                    <div class="mb-4 md:mb-0 md:mr-6">
+                        <h3 class="text-lg font-semibold mb-2">Subscribe to Kishan's Investment Newsletter</h3>
+                        <p class="text-gray-400">Get the latest market insights, stock ideas, and investment strategies delivered to your inbox weekly.</p>
+                    </div>
+                    <div class="w-full md:w-auto">
+                        <div class="flex">
+                            <input type="email" placeholder="Your email address" class="bg-dark-900 text-gray-200 rounded-l px-4 py-2 border border-gray-700 focus:outline-none focus:ring-1 focus:ring-primary-500 w-full md:w-64">
+                            <button class="bg-primary-600 text-white rounded-r px-4 py-2 font-medium hover:bg-primary-700 transition-colors duration-300">Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="js/main.js"></script>
+</body>
+</html> 

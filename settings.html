@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - Financial Portfolio Dashboard</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-900 text-gray-200 dark theme-transition">
+    <div class="flex flex-col md:flex-row min-h-screen">
+        <!-- Sidebar -->
+        <div class="w-full md:w-64 bg-dark-800 border-r border-gray-700">
+            <div class="p-4 flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                    <div class="h-8 w-8 rounded-full bg-gradient-to-r from-blue-500 to-cyan-400 flex items-center justify-center">
+                        <span class="font-bold text-white">K</span>
+                    </div>
+                    <span class="text-lg font-semibold">KishanFolio</span>
+                </div>
+                <button id="theme-toggle" class="text-gray-400 hover:text-white rounded-full p-2">
+                    <i class="fas fa-moon"></i>
+                    <span class="sr-only">Dark Mode</span>
+                </button>
+            </div>
+            
+            <div class="p-4">
+                <div class="flex items-center space-x-3 mb-6">
+                    <div class="h-10 w-10 rounded-full bg-gradient-to-r from-purple-500 to-pink-500"></div>
+                    <div>
+                        <div class="font-medium">Kishan Sharma</div>
+                        <div class="text-xs text-gray-400">Premium Member</div>
+                    </div>
+                </div>
+                
+                <nav>
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="index.html" class="flex items-center space-x-2 p-2 rounded hover:bg-dark-700 text-gray-400">
+                                <i class="fas fa-chart-line"></i>
+                                <span>Dashboard</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center space-x-2 p-2 rounded hover:bg-dark-700 text-gray-400">
+                                <i class="fas fa-wallet"></i>
+                                <span>Transactions</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center space-x-2 p-2 rounded hover:bg-dark-700 text-gray-400">
+                                <i class="fas fa-star"></i>
+                                <span>Watchlist</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="insights.html" class="flex items-center space-x-2 p-2 rounded hover:bg-dark-700 text-gray-400">
+                                <i class="fas fa-lightbulb"></i>
+                                <span>Insights</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="settings.html" class="flex items-center space-x-2 p-2 rounded hover:bg-dark-700 bg-primary-700 text-white">
+                                <i class="fas fa-cog"></i>
+                                <span>Settings</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        
+        <!-- Main content -->
+        <main class="flex-1 p-4 md:p-6 overflow-auto">
+            <div class="mb-6">
+                <h1 class="text-2xl font-semibold">Settings</h1>
+                <p class="text-gray-400">Customize your dashboard experience</p>
+            </div>
+            
+            <!-- Settings sections -->
+            <div class="grid grid-cols-1 gap-6">
+                <!-- Account Settings -->
+                <div class="bg-dark-800 rounded-lg p-6 border border-gray-700">
+                    <h2 class="text-xl font-semibold mb-4">Account Settings</h2>
+                    
+                    <div class="mb-6">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <div class="h-16 w-16 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center text-2xl font-bold">K</div>
+                            <div>
+                                <button class="px-3 py-1 bg-primary-600 text-white rounded text-sm">Change Photo</button>
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                            <div>
+                                <label class="block text-sm text-gray-400 mb-1">Full Name</label>
+                                <input type="text" value="Kishan Sharma" class="w-full bg-dark-900 border border-gray-700 rounded px-3 py-2 text-white focus:outline-none focus:ring-1 focus:ring-primary-500">
+                            </div>
+                            <div>
+                                <label class="block text-sm text-gray-400 mb-1">Email Address</label>
+                                <input type="email" value="kishan.sharma@example.com" class="w-full bg-dark-900 border border-gray-700 rounded px-3 py-2 text-white focus:outline-none focus:ring-1 focus:ring-primary-500">
+                            </div>
+                            <div>
+                                <label class="block text-sm text-gray-400 mb-1">Phone Number</label>
+                                <input type="tel" value="+91 9876543210" class="w-full bg-dark-900 border border-gray-700 rounded px-3 py-2 text-white focus:outline-none focus:ring-1 focus:ring-primary-500">
+                            </div>
+                            <div>
+                                <label class="block text-sm text-gray-400 mb-1">Location</label>
+                                <input type="text" value="Mumbai, India" class="w-full bg-dark-900 border border-gray-700 rounded px-3 py-2 text-white focus:outline-none focus:ring-1 focus:ring-primary-500">
+                            </div>
+                        </div>
+                        
+                        <button class="px-4 py-2 bg-primary-600 text-white rounded">Save Changes</button>
+                    </div>
+                    
+                    <hr class="border-gray-700 my-6">
+                    
+                    <h3 class="text-lg font-medium mb-3">Password</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <label class="block text-sm text-gray-400 mb-1">Current Password</label>
+                            <input type="password" placeholder="••••••••" class="w-full bg-dark-900 border border-gray-700 rounded px-3 py-2 text-white focus:outline-none focus:ring-1 focus:ring-primary-500">
+                        </div>
+                        <div></div>
+                        <div>
+                            <label class="block text-sm text-gray-400 mb-1">New Password</label>
+                            <input type="password" placeholder="••••••••" class="w-full bg-dark-900 border border-gray-700 rounded px-3 py-2 text-white focus:outline-none focus:ring-1 focus:ring-primary-500">
+                        </div>
+                        <div>
+                            <label class="block text-sm text-gray-400 mb-1">Confirm New Password</label>
+                            <input type="password" placeholder="••••••••" class="w-full bg-dark-900 border border-gray-700 rounded px-3 py-2 text-white focus:outline-none focus:ring-1 focus:ring-primary-500">
+                        </div>
+                    </div>
+                    
+                    <button class="px-4 py-2 bg-primary-600 text-white rounded">Update Password</button>
+                </div>
+                
+                <!-- Preferences -->
+                <div class="bg-dark-800 rounded-lg p-6 border border-gray-700">
+                    <h2 class="text-xl font-semibold mb-4">Preferences</h2>
+                    
+                    <div class="mb-6">
+                        <h3 class="text-lg font-medium mb-3">Theme</h3>
+                        <div class="flex space-x-4">
+                            <div class="flex items-center">
+                                <input type="radio" id="dark-theme" name="theme" checked class="mr-2">
+                                <label for="dark-theme">Dark Theme</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" id="light-theme" name="theme" class="mr-2">
+                                <label for="light-theme">Light Theme</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" id="system-theme" name="theme" class="mr-2">
+                                <label for="system-theme">System Default</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <h3 class="text-lg font-medium mb-3">Currency Display</h3>
+                        <select class="bg-dark-900 border border-gray-700 rounded px-3 py-2 text-white focus:outline-none focus:ring-1 focus:ring-primary-500">
+                            <option>₹ Indian Rupee (INR)</option>
+                            <option>$ US Dollar (USD)</option>
+                            <option>€ Euro (EUR)</option>
+                            <option>£ British Pound (GBP)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <h3 class="text-lg font-medium mb-3">Notifications</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <p>Email Notifications</p>
+                                    <p class="text-sm text-gray-400">Receive emails about transactions, portfolio updates, and market alerts</p>
+                                </div>
+                                <label class="relative inline-flex items-center cursor-pointer">
+                                    <input type="checkbox" checked class="sr-only peer">
+                                    <div class="w-11 h-6 bg-gray-700 rounded-full peer peer-checked:bg-primary-600 peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
+                                </label>
+                            </div>
+                            
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <p>SMS Alerts</p>
+                                    <p class="text-sm text-gray-400">Receive text messages for important portfolio changes</p>
+                                </div>
+                                <label class="relative inline-flex items-center cursor-pointer">
+                                    <input type="checkbox" class="sr-only peer">
+                                    <div class="w-11 h-6 bg-gray-700 rounded-full peer peer-checked:bg-primary-600 peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
+                                </label>
+                            </div>
+                            
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <p>Price Alerts</p>
+                                    <p class="text-sm text-gray-400">Get notifications when stocks in your watchlist hit target prices</p>
+                                </div>
+                                <label class="relative inline-flex items-center cursor-pointer">
+                                    <input type="checkbox" checked class="sr-only peer">
+                                    <div class="w-11 h-6 bg-gray-700 rounded-full peer peer-checked:bg-primary-600 peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="px-4 py-2 bg-primary-600 text-white rounded">Save Preferences</button>
+                </div>
+                
+                <!-- Security Settings -->
+                <div class="bg-dark-800 rounded-lg p-6 border border-gray-700">
+                    <h2 class="text-xl font-semibold mb-4">Security</h2>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <h3 class="text-lg font-medium mb-3">Two-Factor Authentication</h3>
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <p class="text-sm text-gray-400">Add an extra layer of security to your account</p>
+                                </div>
+                                <label class="relative inline-flex items-center cursor-pointer">
+                                    <input type="checkbox" class="sr-only peer">
+                                    <div class="w-11 h-6 bg-gray-700 rounded-full peer peer-checked:bg-primary-600 peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-lg font-medium mb-3">Login Sessions</h3>
+                            <div class="bg-dark-900 rounded-lg p-4 mb-3">
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <p>Current Session</p>
+                                        <p class="text-sm text-gray-400">Windows • Chrome • Mumbai, India</p>
+                                        <p class="text-xs text-gray-500">Started: Today at 10:45 AM</p>
+                                    </div>
+                                    <span class="text-green-500 text-sm">Active</span>
+                                </div>
+                            </div>
+                            <button class="px-3 py-1 bg-red-600 text-white rounded text-sm">Log Out of All Sessions</button>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-lg font-medium mb-3">Account Access</h3>
+                            <p class="text-sm text-gray-400 mb-3">These APIs and services have access to your account</p>
+                            <div class="bg-dark-900 rounded-lg p-4 mb-3">
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <p>Zerodha API</p>
+                                        <p class="text-sm text-gray-400">Access to trade and view data from your Zerodha account</p>
+                                    </div>
+                                    <button class="text-red-500 text-sm">Revoke</button>
+                                </div>
+                            </div>
+                            <div class="bg-dark-900 rounded-lg p-4">
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <p>Angel Broking API</p>
+                                        <p class="text-sm text-gray-400">Access to trade and view data from your Angel account</p>
+                                    </div>
+                                    <button class="text-red-500 text-sm">Revoke</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Data Management -->
+                <div class="bg-dark-800 rounded-lg p-6 border border-gray-700">
+                    <h2 class="text-xl font-semibold mb-4">Data Management</h2>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <h3 class="text-lg font-medium mb-3">Export Data</h3>
+                            <p class="text-sm text-gray-400 mb-3">Download your trading and portfolio data</p>
+                            <div class="flex space-x-3">
+                                <button class="px-3 py-2 bg-blue-600 text-white rounded text-sm flex items-center">
+                                    <i class="fas fa-file-csv mr-2"></i> Export as CSV
+                                </button>
+                                <button class="px-3 py-2 bg-green-600 text-white rounded text-sm flex items-center">
+                                    <i class="fas fa-file-excel mr-2"></i> Export as Excel
+                                </button>
+                                <button class="px-3 py-2 bg-red-600 text-white rounded text-sm flex items-center">
+                                    <i class="fas fa-file-pdf mr-2"></i> Export as PDF
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-lg font-medium mb-3">Data Privacy</h3>
+                            <p class="text-sm text-gray-400 mb-3">Manage how your data is used and stored</p>
+                            <div class="space-y-3">
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="analytics" checked class="mr-2">
+                                    <label for="analytics">Allow anonymous usage analytics to improve the product</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="personalization" checked class="mr-2">
+                                    <label for="personalization">Allow personalization based on your investment activity</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="marketing" class="mr-2">
+                                    <label for="marketing">Receive marketing communications</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-lg font-medium mb-3 text-red-500">Danger Zone</h3>
+                            <p class="text-sm text-gray-400 mb-3">Permanent actions that cannot be undone</p>
+                            <div class="flex space-x-3">
+                                <button class="px-3 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded text-sm">Delete All Watchlists</button>
+                                <button class="px-3 py-2 bg-red-700 hover:bg-red-600 text-white rounded text-sm">Delete Account</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="js/main.js"></script>
+</body>
+</html> 

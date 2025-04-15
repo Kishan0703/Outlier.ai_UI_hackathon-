@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Portfolio Dashboard</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-gray-900 text-gray-200 dark theme-transition">
+    <div class="flex flex-col md:flex-row min-h-screen">
+        <!-- Sidebar -->
+        <div class="w-full md:w-64 bg-dark-800 border-r border-gray-700">
+            <div class="p-4 flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                    <div class="h-8 w-8 rounded-full bg-gradient-to-r from-blue-500 to-cyan-400 flex items-center justify-center">
+                        <span class="font-bold text-white">K</span>
+                    </div>
+                    <span class="text-lg font-semibold">KishanFolio</span>
+                </div>
+                <button id="theme-toggle" class="text-gray-400 hover:text-white rounded-full p-2">
+                    <i class="fas fa-moon"></i>
+                    <span class="sr-only">Dark Mode</span>
+                </button>
+            </div>
+            
+            <div class="p-4">
+                <div class="flex items-center space-x-3 mb-6">
+                    <div class="h-10 w-10 rounded-full bg-gradient-to-r from-purple-500 to-pink-500"></div>
+                    <div>
+                        <div class="font-medium">Kishan Sharma</div>
+                        <div class="text-xs text-gray-400">Premium Member</div>
+                    </div>
+                </div>
+                
+                <nav>
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="#" class="flex items-center space-x-2 p-2 rounded hover:bg-dark-700 bg-primary-700 text-white">
+                                <i class="fas fa-chart-line"></i>
+                                <span>Dashboard</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center space-x-2 p-2 rounded hover:bg-dark-700 text-gray-400">
+                                <i class="fas fa-wallet"></i>
+                                <span>Transactions</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center space-x-2 p-2 rounded hover:bg-dark-700 text-gray-400">
+                                <i class="fas fa-star"></i>
+                                <span>Watchlist</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="insights.html" class="flex items-center space-x-2 p-2 rounded hover:bg-dark-700 text-gray-400">
+                                <i class="fas fa-lightbulb"></i>
+                                <span>Insights</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center space-x-2 p-2 rounded hover:bg-dark-700 text-gray-400">
+                                <i class="fas fa-cog"></i>
+                                <span>Settings</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        
+        <!-- Main content -->
+        <main class="flex-1 p-4 md:p-6 overflow-auto">
+            <div class="mb-6">
+                <h1 class="text-2xl font-semibold">Dashboard Overview</h1>
+                <p class="text-gray-400">Welcome back, Kishan! Here's your financial summary.</p>
+            </div>
+            
+            <!-- Portfolio summary -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+                <div class="bg-dark-800 rounded-lg p-4 border border-gray-700">
+                    <div class="flex justify-between items-start mb-3">
+                        <div>
+                            <div class="text-sm text-gray-400">Portfolio Value</div>
+                            <div class="text-xl font-semibold counter" data-target="1245680">0</div>
+                        </div>
+                        <div class="text-green-500 flex items-center">
+                            <span>+3.8%</span>
+                            <i class="fas fa-arrow-up ml-1"></i>
+                        </div>
+                    </div>
+                    <div class="h-1 bg-dark-700 w-full">
+                        <div class="h-full bg-gradient-to-r from-blue-500 to-cyan-400 w-4/5"></div>
+                    </div>
+                </div>
+                
+                <div class="bg-dark-800 rounded-lg p-4 border border-gray-700">
+                    <div class="flex justify-between items-start mb-3">
+                        <div>
+                            <div class="text-sm text-gray-400">Day's Gain</div>
+                            <div class="text-xl font-semibold counter" data-target="27350">0</div>
+                        </div>
+                        <div class="text-green-500 flex items-center">
+                            <span>+2.2%</span>
+                            <i class="fas fa-arrow-up ml-1"></i>
+                        </div>
+                    </div>
+                    <div class="h-1 bg-dark-700 w-full">
+                        <div class="h-full bg-gradient-to-r from-green-500 to-emerald-400 w-3/5"></div>
+                    </div>
+                </div>
+                
+                <div class="bg-dark-800 rounded-lg p-4 border border-gray-700">
+                    <div class="flex justify-between items-start mb-3">
+                        <div>
+                            <div class="text-sm text-gray-400">CAGR</div>
+                            <div class="text-xl font-semibold">16.7%</div>
+                        </div>
+                        <div class="text-green-500 flex items-center">
+                            <span>+1.2%</span>
+                            <i class="fas fa-arrow-up ml-1"></i>
+                        </div>
+                    </div>
+                    <div class="h-1 bg-dark-700 w-full">
+                        <div class="h-full bg-gradient-to-r from-yellow-500 to-amber-400 w-2/3"></div>
+                    </div>
+                </div>
+                
+                <div class="bg-dark-800 rounded-lg p-4 border border-gray-700">
+                    <div class="flex justify-between items-start mb-3">
+                        <div>
+                            <div class="text-sm text-gray-400">Investments</div>
+                            <div class="text-xl font-semibold counter" data-target="870500">0</div>
+                        </div>
+                        <div class="text-green-500 flex items-center">
+                            <span>+43.1%</span>
+                            <i class="fas fa-arrow-up ml-1"></i>
+                        </div>
+                    </div>
+                    <div class="h-1 bg-dark-700 w-full">
+                        <div class="h-full bg-gradient-to-r from-purple-500 to-pink-400 w-7/12"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Main charts -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
+                <div class="lg:col-span-2 bg-dark-800 rounded-lg p-4 border border-gray-700">
+                    <div class="flex justify-between items-center mb-4">
+                        <div>
+                            <h2 class="text-lg font-medium">Portfolio Performance</h2>
+                            <p class="text-sm text-gray-400">Today's performance</p>
+                        </div>
+                        <div class="flex space-x-2">
+                            <button class="px-3 py-1 rounded text-xs bg-primary-700 text-white">1D</button>
+                            <button class="px-3 py-1 rounded text-xs bg-dark-900 text-gray-400">1W</button>
+                            <button class="px-3 py-1 rounded text-xs bg-dark-900 text-gray-400">1M</button>
+                            <button class="px-3 py-1 rounded text-xs bg-dark-900 text-gray-400">1Y</button>
+                        </div>
+                    </div>
+                    <div class="h-64">
+                        <canvas id="performanceChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="bg-dark-800 rounded-lg p-4 border border-gray-700">
+                    <div class="flex justify-between items-center mb-4">
+                        <div>
+                            <h2 class="text-lg font-medium">Asset Allocation</h2>
+                            <p class="text-sm text-gray-400">Current portfolio mix</p>
+                        </div>
+                    </div>
+                    <div class="h-52 flex justify-center mb-4">
+                        <canvas id="assetAllocationChart"></canvas>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 rounded-full bg-blue-500 mr-2"></div>
+                            <div class="text-sm">Stocks: 45%</div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 rounded-full bg-green-500 mr-2"></div>
+                            <div class="text-sm">Mutual Funds: 30%</div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 rounded-full bg-yellow-500 mr-2"></div>
+                            <div class="text-sm">Bonds: 15%</div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 rounded-full bg-purple-500 mr-2"></div>
+                            <div class="text-sm">Crypto: 10%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Watchlist and Transactions -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
+                <div class="lg:col-span-2 bg-dark-800 rounded-lg p-4 border border-gray-700">
+                    <div class="flex justify-between items-center mb-4">
+                        <div>
+                            <h2 class="text-lg font-medium">Transaction History</h2>
+                            <p class="text-sm text-gray-400">Recent transactions</p>
+                        </div>
+                        <select class="bg-dark-900 text-gray-400 text-sm rounded p-1 border border-gray-700 focus:outline-none focus:ring-1 focus:ring-primary-500">
+                            <option>All Transactions</option>
+                            <option>Buys Only</option>
+                            <option>Sells Only</option>
+                            <option>Dividends</option>
+                        </select>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full">
+                            <thead>
+                                <tr class="text-gray-400 text-sm">
+                                    <th class="text-left py-2">Date</th>
+                                    <th class="text-left py-2">Description</th>
+                                    <th class="text-right py-2">Amount</th>
+                                    <th class="text-right py-2">Type</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-700">
+                                <tr class="hover:bg-dark-700">
+                                    <td class="py-3 text-sm">14 Apr 2023</td>
+                                    <td class="py-3">
+                                        <div class="flex items-center">
+                                            <div class="h-8 w-8 rounded bg-blue-100 text-blue-800 flex items-center justify-center mr-3 text-xs font-medium">HDFC</div>
+                                            <div>
+                                                <div class="font-medium">HDFC Bank</div>
+                                                <div class="text-xs text-gray-400">10 shares @ ₹1550</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="py-3 text-right">₹15,500</td>
+                                    <td class="py-3 text-right"><span class="text-green-500 flex items-center justify-end"><i class="fas fa-arrow-right mr-1"></i> Buy</span></td>
+                                </tr>
+                                <tr class="hover:bg-dark-700">
+                                    <td class="py-3 text-sm">12 Apr 2023</td>
+                                    <td class="py-3">
+                                        <div class="flex items-center">
+                                            <div class="h-8 w-8 rounded bg-green-100 text-green-800 flex items-center justify-center mr-3 text-xs font-medium">TCS</div>
+                                            <div>
+                                                <div class="font-medium">Tata Consultancy</div>
+                                                <div class="text-xs text-gray-400">5 shares @ ₹3480</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="py-3 text-right">₹17,400</td>
+                                    <td class="py-3 text-right"><span class="text-green-500 flex items-center justify-end"><i class="fas fa-arrow-right mr-1"></i> Buy</span></td>
+                                </tr>
+                                <tr class="hover:bg-dark-700">
+                                    <td class="py-3 text-sm">10 Apr 2023</td>
+                                    <td class="py-3">
+                                        <div class="flex items-center">
+                                            <div class="h-8 w-8 rounded bg-purple-100 text-purple-800 flex items-center justify-center mr-3 text-xs font-medium">RIL</div>
+                                            <div>
+                                                <div class="font-medium">Reliance Industries</div>
+                                                <div class="text-xs text-gray-400">12 shares @ ₹2450</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="py-3 text-right">₹29,400</td>
+                                    <td class="py-3 text-right"><span class="text-green-500 flex items-center justify-end"><i class="fas fa-arrow-right mr-1"></i> Buy</span></td>
+                                </tr>
+                                <tr class="hover:bg-dark-700">
+                                    <td class="py-3 text-sm">05 Apr 2023</td>
+                                    <td class="py-3">
+                                        <div class="flex items-center">
+                                            <div class="h-8 w-8 rounded bg-yellow-100 text-yellow-800 flex items-center justify-center mr-3 text-xs font-medium">ITC</div>
+                                            <div>
+                                                <div class="font-medium">ITC Limited</div>
+                                                <div class="text-xs text-gray-400">30 shares @ ₹385</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="py-3 text-right">₹11,550</td>
+                                    <td class="py-3 text-right"><span class="text-red-500 flex items-center justify-end"><i class="fas fa-arrow-left mr-1"></i> Sell</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="bg-dark-800 rounded-lg p-4 border border-gray-700">
+                    <div class="flex justify-between items-center mb-4">
+                        <div>
+                            <h2 class="text-lg font-medium">Watchlist</h2>
+                            <p class="text-sm text-gray-400">Stocks you're watching</p>
+                        </div>
+                        <button class="text-primary-400 hover:text-primary-300 p-1">
+                            <i class="fas fa-plus text-sm"></i>
+                        </button>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full">
+                            <thead>
+                                <tr class="text-gray-400 text-sm">
+                                    <th class="text-left py-2">Symbol</th>
+                                    <th class="text-right py-2">Price</th>
+                                    <th class="text-right py-2">Chg%</th>
+                                    <th class="text-right py-2"></th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-700">
+                                <tr class="hover:bg-dark-700">
+                                    <td class="py-3">
+                                        <div class="flex items-center">
+                                            <i class="far fa-star text-gray-500 mr-2 cursor-pointer"></i>
+                                            <span class="font-medium">INFY</span>
+                                        </div>
+                                    </td>
+                                    <td class="py-3 text-right">₹1,458.60</td>
+                                    <td class="py-3 text-right text-green-500">+2.34%</td>
+                                    <td class="py-3 text-right">
+                                        <button class="text-xs rounded bg-primary-600 text-white px-2 py-1">Trade</button>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-dark-700">
+                                    <td class="py-3">
+                                        <div class="flex items-center">
+                                            <i class="fas fa-star text-yellow-500 mr-2 cursor-pointer"></i>
+                                            <span class="font-medium">TATASTEEL</span>
+                                        </div>
+                                    </td>
+                                    <td class="py-3 text-right">₹130.50</td>
+                                    <td class="py-3 text-right text-red-500">-1.20%</td>
+                                    <td class="py-3 text-right">
+                                        <button class="text-xs rounded bg-primary-600 text-white px-2 py-1">Trade</button>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-dark-700">
+                                    <td class="py-3">
+                                        <div class="flex items-center">
+                                            <i class="far fa-star text-gray-500 mr-2 cursor-pointer"></i>
+                                            <span class="font-medium">SBIN</span>
+                                        </div>
+                                    </td>
+                                    <td class="py-3 text-right">₹585.70</td>
+                                    <td class="py-3 text-right text-green-500">+0.87%</td>
+                                    <td class="py-3 text-right">
+                                        <button class="text-xs rounded bg-primary-600 text-white px-2 py-1">Trade</button>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-dark-700">
+                                    <td class="py-3">
+                                        <div class="flex items-center">
+                                            <i class="fas fa-star text-yellow-500 mr-2 cursor-pointer"></i>
+                                            <span class="font-medium">HDFCBANK</span>
+                                        </div>
+                                    </td>
+                                    <td class="py-3 text-right">₹1,550.35</td>
+                                    <td class="py-3 text-right text-green-500">+1.65%</td>
+                                    <td class="py-3 text-right">
+                                        <button class="text-xs rounded bg-primary-600 text-white px-2 py-1">Trade</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Goal Tracking Section -->
+            <div class="mb-6">
+                <div class="bg-dark-800 rounded-lg p-4 border border-gray-700">
+                    <div class="flex justify-between items-center mb-4">
+                        <div>
+                            <h2 class="text-lg font-medium">Goal Tracking</h2>
+                            <p class="text-sm text-gray-400">Progress towards your financial goals</p>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                        <div class="bg-dark-700 p-4 rounded-lg border border-gray-600">
+                            <div class="flex items-center justify-between mb-2">
+                                <div class="flex items-center">
+                                    <div class="w-8 h-8 rounded-full bg-green-500 flex items-center justify-center mr-3">
+                                        <i class="fas fa-coins text-white"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-medium">Retirement Fund</h3>
+                                        <p class="text-xs text-gray-400">Target: ₹1.1 Cr by 2040</p>
+                                    </div>
+                                </div>
+                                <span class="text-sm font-semibold">21%</span>
+                            </div>
+                            <div class="h-2 bg-dark-900 rounded-full mb-2">
+                                <div class="h-full bg-green-500 rounded-full" style="width: 21%"></div>
+                            </div>
+                            <div class="text-xs text-gray-400 flex justify-between">
+                                <span>₹23.1 Lakhs saved</span>
+                                <span>₹1.1 Cr goal</span>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-dark-700 p-4 rounded-lg border border-gray-600">
+                            <div class="flex items-center justify-between mb-2">
+                                <div class="flex items-center">
+                                    <div class="w-8 h-8 rounded-full bg-yellow-500 flex items-center justify-center mr-3">
+                                        <i class="fas fa-graduation-cap text-white"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-medium">Child's Education</h3>
+                                        <p class="text-xs text-gray-400">Target: ₹60 Lakhs by 2030</p>
+                                    </div>
+                                </div>
+                                <span class="text-sm font-semibold">30%</span>
+                            </div>
+                            <div class="h-2 bg-dark-900 rounded-full mb-2">
+                                <div class="h-full bg-yellow-500 rounded-full" style="width: 30%"></div>
+                            </div>
+                            <div class="text-xs text-gray-400 flex justify-between">
+                                <span>₹18 Lakhs saved</span>
+                                <span>₹60 Lakhs goal</span>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-dark-700 p-4 rounded-lg border border-gray-600">
+                            <div class="flex items-center justify-between mb-2">
+                                <div class="flex items-center">
+                                    <div class="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center mr-3">
+                                        <i class="fas fa-home text-white"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-medium">Home Purchase</h3>
+                                        <p class="text-xs text-gray-400">Target: ₹75 Lakhs by 2028</p>
+                                    </div>
+                                </div>
+                                <span class="text-sm font-semibold">46%</span>
+                            </div>
+                            <div class="h-2 bg-dark-900 rounded-full mb-2">
+                                <div class="h-full bg-blue-500 rounded-full" style="width: 46%"></div>
+                            </div>
+                            <div class="text-xs text-gray-400 flex justify-between">
+                                <span>₹34.5 Lakhs saved</span>
+                                <span>₹75 Lakhs goal</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="md:col-span-2">
+                            <h3 class="text-md font-medium mb-3">Goal Forecast</h3>
+                            <div class="h-56">
+                                <canvas id="goalForecastChart"></canvas>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-dark-700 p-4 rounded-lg border border-gray-600">
+                            <h3 class="text-md font-medium mb-3">Recommended Actions</h3>
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <div class="w-6 h-6 rounded-full bg-green-500 flex items-center justify-center mt-0.5 mr-2 flex-shrink-0">
+                                        <i class="fas fa-check text-white text-xs"></i>
+                                    </div>
+                                    <div class="text-sm">
+                                        <span class="font-medium">Increase retirement contributions by 5%</span>
+                                        <p class="text-xs text-gray-400 mt-1">This could add ₹5.2 Lakhs by 2030</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <div class="w-6 h-6 rounded-full bg-yellow-500 flex items-center justify-center mt-0.5 mr-2 flex-shrink-0">
+                                        <i class="fas fa-lightbulb text-white text-xs"></i>
+                                    </div>
+                                    <div class="text-sm">
+                                        <span class="font-medium">Optimize education fund allocation</span>
+                                        <p class="text-xs text-gray-400 mt-1">Consider moving to higher yield options</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <div class="w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center mt-0.5 mr-2 flex-shrink-0">
+                                        <i class="fas fa-chart-line text-white text-xs"></i>
+                                    </div>
+                                    <div class="text-sm">
+                                        <span class="font-medium">Home down payment on track</span>
+                                        <p class="text-xs text-gray-400 mt-1">Continue current monthly contribution</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="js/main.js"></script>
+</body>
+</html> 
