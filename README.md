@@ -33,12 +33,3 @@ A **responsive and visually rich financial portfolio dashboard** built using **H
 - **Font Awesome** – Scalable icons for UI clarity  
 - **Made using [Cursor AI](https://cursor.so)** – AI-assisted coding for rapid development
 
----
-
-## 📦 Setup Instructions
-
-1. **Clone this repository**
-   ```bash
-   git clone https://github.com/kishan0703/financial-portfolio-dashboard.git
-
--2. Open index.html in web browser
