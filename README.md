@@ -1,41 +1,43 @@
 # Financial Portfolio Dashboard
 
-A responsive financial portfolio dashboard built with HTML, Tailwind CSS, and JavaScript.
+A **responsive and visually rich financial portfolio dashboard** built using **HTML**, **Tailwind CSS**, and **JavaScript**. This project focuses purely on frontend UI with a dark theme and smooth animations to deliver a clean and engaging user experience.
 
-## Features
+---
 
-- **Dark Theme Design**: Professional dark theme UI with a clean and modern look.
-- **Fully Responsive**: Works on all screen sizes from mobile to desktop.
-- **Interactive Charts**: Portfolio performance line chart and asset allocation pie chart.
-- **Animated Counters**: Numbers animate when the page loads.
-- **Micro-interactions**: Subtle animations, hover effects, and transitions.
-- **Light/Dark Mode Toggle**: Switch between dark and light themes.
-- **Transaction History**: Interactive table with filtering and hover effects.
-- **Watchlist Panel**: Stock watchlist with star functionality.
-- **Modern UI Components**: Cards, tables, charts, and navigation elements.
+## 🚀 Live Demo
 
-## Technologies Used
+[Click here to view the live demo](https://67fd496ea1c31ee412207ab9--silver-marshmallow-d6c077.netlify.app/) <!-- Replace `#` with your live site link -->
 
-- **HTML5**: Semantic HTML structure.
-- **Tailwind CSS**: Utility-first CSS framework for styling.
-- **JavaScript**: For interactivity and animations.
-- **Chart.js**: For responsive, interactive charts.
-- **Font Awesome**: For icons.
+---
 
-## Setup
+## ✨ Features
 
-1. Clone the repository.
-2. Open `index.html` in your web browser.
+- **Dark Theme Design**: Professional dark UI for a modern look.
+- **Fully Responsive**: Seamless layout across mobile, tablet, and desktop.
+- **Interactive Charts**: Portfolio performance (line chart) and asset allocation (pie chart) using Chart.js.
+- **Animated Counters**: Key numbers animate smoothly on page load.
+- **Micro-interactions**: Subtle hover effects, transitions, and animations.
+- **Light/Dark Mode Toggle**: Easily switch themes for personal preference.
+- **Transaction History**: Interactive and scrollable table with hover and filter effects.
+- **Watchlist Panel**: Favorite stocks with star icon and live price look.
+- **Modern UI Components**: Cards, tables, modals, sidebar navigation, and more.
 
-## Screenshots
+---
 
-The dashboard features:
-- Portfolio summary with user information
-- Performance charts
-- Asset allocation visualization
-- Transaction history
-- Watchlist management
+## 🛠️ Technologies Used
 
-## Credits
+- **HTML5** – Semantic layout and structure  
+- **Tailwind CSS** – Utility-first styling with modern design utilities  
+- **JavaScript** – Interactivity and animation logic  
+- **Chart.js** – For rendering responsive data visualizations  
+- **Font Awesome** – Scalable icons for UI clarity  
+- **Made using [Cursor AI](https://cursor.so)** – AI-assisted coding for rapid development
 
-Created for a UI hackathon project. 
+---
+
+## 📦 Setup Instructions
+
+1. **Clone this repository**
+   ```bash
+   git clone https://github.com/your-username/financial-portfolio-dashboard.git
+   Open index.html in web browser
